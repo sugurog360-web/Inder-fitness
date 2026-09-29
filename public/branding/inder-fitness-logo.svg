@@ -1,0 +1,52 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold" x1="180" y1="150" x2="1020" y2="1050" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9D759"/>
+      <stop offset="0.5" stop-color="#F4C72F"/>
+      <stop offset="1" stop-color="#D89B20"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#F5C53A" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#050505"/>
+
+  <g filter="url(#softGlow)">
+    <circle cx="600" cy="600" r="520" stroke="url(#gold)" stroke-width="38" fill="none"/>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M315 530C315 508.461 332.461 491 354 491H383C404.539 491 422 508.461 422 530V670C422 691.539 404.539 709 383 709H354C332.461 709 315 691.539 315 670V530Z" fill="#F1F1F1"/>
+    <path d="M360 465H377V735H360V465Z" fill="#F1F1F1"/>
+    <path d="M434 530C434 508.461 451.461 491 473 491H502C523.539 491 541 508.461 541 530V670C541 691.539 523.539 709 502 709H473C451.461 709 434 691.539 434 670V530Z" fill="#F1F1F1"/>
+    <path d="M485 465H502V735H485V465Z" fill="#F1F1F1"/>
+    <path d="M765 530C765 508.461 782.461 491 804 491H833C854.539 491 872 508.461 872 530V670C872 691.539 854.539 709 833 709H804C782.461 709 765 691.539 765 670V530Z" fill="#F1F1F1"/>
+    <path d="M810 465H827V735H810V465Z" fill="#F1F1F1"/>
+    <path d="M690 530C690 508.461 707.461 491 729 491H758C779.539 491 797 508.461 797 530V670C797 691.539 779.539 709 758 709H729C707.461 709 690 691.539 690 670V530Z" fill="#F1F1F1"/>
+    <path d="M741 465H758V735H741V465Z" fill="#F1F1F1"/>
+  </g>
+
+  <g>
+    <path d="M210 310L385 310L360 355L245 355L210 310Z" fill="#F6F6F6" fill-opacity="0.9"/>
+    <path d="M208 310L241 310L385 310L360 355L245 355L208 310Z" fill="#F6F6F6" fill-opacity="0.9"/>
+    <path d="M1050 310L875 310L900 355L1015 355L1050 310Z" fill="#F6F6F6" fill-opacity="0.9"/>
+    <path d="M892 310L875 310L1015 355H1035L892 310Z" fill="#F6F6F6" fill-opacity="0.9"/>
+  </g>
+
+  <g>
+    <text x="200" y="500" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="180" letter-spacing="-8">INDER</text>
+    <text x="205" y="620" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="92" letter-spacing="7">FITNESS</text>
+  </g>
+
+  <g>
+    <text x="195" y="740" fill="#F3F3F3" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="32" letter-spacing="2.5">ACE CERTIFIED</text>
+    <text x="195" y="785" fill="#F3F3F3" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="32" letter-spacing="2.5">PERSONAL TRAINER</text>
+  </g>
+
+  <g>
+    <text x="820" y="500" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="78" letter-spacing="-2">BETTER</text>
+    <text x="820" y="590" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="78" letter-spacing="-2">THAN</text>
+    <text x="820" y="680" fill="#F4F4F4" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="78" letter-spacing="-2">YESTERDAY</text>
+  </g>
+</svg>
