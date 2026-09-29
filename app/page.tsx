@@ -1,0 +1,170 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { AppShell } from '@/components/app-shell';
+import { StatCard } from '@/components/ui/stat-card';
+import { ProgressBar } from '@/components/ui/progress-bar';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { activityData, goals, recentWorkouts, achievements, timeline, coachSuggestions } from '@/lib/data';
+
+export default function HomePage() {
+  return (
+    <AppShell>
+      <div className="page-shell">
+        <section className="hero-panel">
+          <div>
+            <Badge tone="gold">Daily focus</Badge>
+            <h1>Build a stronger version of you.</h1>
+            <p>
+              Intelligent training, better recovery, healthier habits and momentum that lasts.
+            </p>
+            <div className="hero-actions">
+              <Button as={Link} href="/dashboard">Open dashboard</Button>
+              <Button variant="secondary" as={Link} href="/ai">AI Trainer</Button>
+            </div>
+          </div>
+
+          <div className="hero-art">
+            <div className="hero-card glow-card">
+              <div className="hero-avatar-wrap">
+                <Image src="/branding/inder-fitness-logo.svg" alt="Inder Fitness logo" width={220} height={220} priority />
+              </div>
+              <div className="hero-mini-stats">
+                <div>
+                  <small>Consistency</small>
+                  <strong>82%</strong>
+                </div>
+                <div>
+                  <small>Recovery</small>
+                  <strong>Good</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="stats-grid">
+          <StatCard label="Active goals" value="5" trend="+2 this month" />
+          <StatCard label="Workout streak" value="18 days" trend="Best this quarter" />
+          <StatCard label="Calories burned" value="8,240" trend="+14% vs last week" />
+          <StatCard label="Hydration" value="2.4L" trend="Target 2.7L" />
+        </section>
+
+        <section className="content-grid two-col">
+          <div className="panel">
+            <div className="panel-header">
+              <h2>Current goals</h2>
+              <Link href="/goals">View all</Link>
+            </div>
+            <div className="stack">
+              {goals.map((goal) => (
+                <div key={goal.title} className="goal-item">
+                  <div className="goal-head">
+                    <strong>{goal.title}</strong>
+                    <span>{goal.metric}</span>
+                  </div>
+                  <ProgressBar value={goal.progress} tone="gold" />
+                  <div className="meta-row">
+                    <span>{goal.progress}% complete</span>
+                    <span>{goal.next}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="panel">
+            <div className="panel-header">
+              <h2>AI Coach insight</h2>
+              <Badge tone="soft">Adaptive</Badge>
+            </div>
+            <div className="stack">
+              {coachSuggestions.map((item) => (
+                <div key={item.title} className="mini-card">
+                  <div className="mini-icon">✦</div>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="content-grid three-col">
+          <div className="panel span-2">
+            <div className="panel-header">
+              <h2>Weekly activity</h2>
+              <Badge tone="soft">7 days</Badge>
+            </div>
+            <div className="chart-grid">
+              {activityData.map((day) => (
+                <div key={day.day} className="bar-chart">
+                  <div className="bar-track">
+                    <div className="bar-fill" style={{ height: `${day.value}%` }} />
+                  </div>
+                  <span>{day.day}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="panel">
+            <div className="panel-header">
+              <h2>Recent workouts</h2>
+            </div>
+            <div className="stack">
+              {recentWorkouts.map((workout) => (
+                <div key={workout.title} className="list-row">
+                  <div>
+                    <strong>{workout.title}</strong>
+                    <p>{workout.meta}</p>
+                  </div>
+                  <span>{workout.time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="content-grid two-col">
+          <div className="panel">
+            <div className="panel-header">
+              <h2>Achievements</h2>
+              <Link href="/profile">See profile</Link>
+            </div>
+            <div className="achievement-grid">
+              {achievements.map((item) => (
+                <div key={item.title} className="achievement-item">
+                  <div className="achievement-icon">{item.icon}</div>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="panel">
+            <div className="panel-header">
+              <h2>Momentum</h2>
+            </div>
+            <div className="timeline">
+              {timeline.map((entry) => (
+                <div key={entry.title} className="timeline-item">
+                  <span className="dot" />
+                  <div>
+                    <strong>{entry.title}</strong>
+                    <p>{entry.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    </AppShell>
+  );
+}
